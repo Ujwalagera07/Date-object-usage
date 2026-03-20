@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><body>
+<h3>Date Object Demo</h3>
+<button onclick="showDate()">Show Date Info</button>
+<pre id="out"></pre>
+
+<script>
+let now = new Date();
+
+function showDate() {
+    let res = '';
+    
+    // Properties/Methods
+    res += 'Today: ' + now.toDateString() + '\n';
+    res += 'Time: ' + now.toTimeString().substring(0,8) + '\n';
+    res += 'Full: ' + now.toLocaleString() + '\n';
+    res += 'Year: ' + now.getFullYear() + '\n';
+    res += 'Month: ' + (now.getMonth()+1) + '\n';
+    res += 'Day: ' + now.getDate() + '\n';
+    res += 'Hours: ' + now.getHours() + '\n';
+    res += 'Minutes: ' + now.getMinutes() + '\n';
+    
+    // Methods
+    let future = new Date();
+    future.setDate(future.getDate() + 7);
+    res += '\n+7 days: ' + future.toDateString() + '\n';
+    
+    document.getElementById('out').textContent = res;
+}
+</script>
+</body></html>
